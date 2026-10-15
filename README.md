@@ -68,3 +68,29 @@ npm run dev:backend
 ```
 
 `dev:frontend` inicia Vite. `dev:backend` inicia Uvicorn con recarga automática en el puerto 8000.
+
+## Pruebas
+
+Los tests están en `tests/` y se corren con pytest. No hace falta levantar el servidor: `TestClient` importa la app de FastAPI y le manda la petición en el mismo proceso.
+
+Desde la raíz del proyecto, con las dependencias del backend ya instaladas:
+
+En Windows (PowerShell):
+
+```powershell
+backend\.venv\Scripts\python.exe -m pytest tests -v
+```
+
+En macOS o Linux:
+
+```bash
+backend/.venv/bin/python -m pytest tests -v
+```
+
+Si el entorno virtual ya está activado, basta con:
+
+```bash
+python -m pytest tests -v
+```
+
+pytest solo recoge archivos llamados `test_*.py` o `*_test.py`. `-v` muestra el nombre de cada prueba.
