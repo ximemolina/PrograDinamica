@@ -14,7 +14,7 @@ jobs:
         working-directory: backend
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 
 
       - name: Configurar Python
         uses: actions/setup-python@v5
@@ -30,4 +30,5 @@ jobs:
           pip install pytest httpx
 
       - name: Correr pruebas
+        working-directory: ${{ github.workspace }}
         run: python -m pytest -v
