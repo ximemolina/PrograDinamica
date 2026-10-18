@@ -19,7 +19,7 @@ class TestSeries:
         )
 
         assert response.status_code == 200
-        assert response.json() == [["-", 1, 1], [0, 0.6, 0.76], [0, 0.24, 0.552]]
+        assert response.json() == {"resultado": [["-", 1, 1], [0, 0.6, 0.76], [0, 0.24, 0.552]]}
 
     def test_series_deportivas2(self):
         response = client.post(
@@ -33,7 +33,7 @@ class TestSeries:
         )
 
         assert response.status_code == 200
-        assert response.json() == [["-",1,1,1,1],[0,0.57,0.8151,0.9057,0.9519],[0,0.3249,0.5651,0.732,0.8398],[0,0.1592,0.3581,0.5413,0.7114],[0,0.078,0.2152,0.4011,0.578]]
+        assert response.json() == {"resultado": [["-",1,1,1,1],[0,0.57,0.8151,0.9057,0.9519],[0,0.3249,0.5651,0.732,0.8398],[0,0.1592,0.3581,0.5413,0.7114],[0,0.078,0.2152,0.4011,0.578]]}
 
     def test_series_deportivas3(self):
         response = client.post(
@@ -47,7 +47,7 @@ class TestSeries:
         )
 
         assert response.status_code == 200
-        assert response.json() == [["-",1,1,1,1],[0,0.55,0.7975,0.9089,0.959],[0,0.3025,0.5748,0.7586,0.8688],[0,0.1664,0.391,0.5932,0.7448],[0,0.0915,0.2562,0.4415,0.6083]]     
+        assert response.json() == {"resultado": [["-",1,1,1,1],[0,0.55,0.7975,0.9089,0.959],[0,0.3025,0.5748,0.7586,0.8688],[0,0.1664,0.391,0.5932,0.7448],[0,0.0915,0.2562,0.4415,0.6083]]}     
         
 
     def test_series_deportivas_negativo1(self):
@@ -77,6 +77,3 @@ class TestSeries:
 
         assert response.status_code == 200
         assert response.json() == {"error": "Las probabilidades deben ser un número del 0 al 1"}
-
-    # ----------------------------------- pruebas del frontend de series deportivas ----------------------------------- 
-    # ...

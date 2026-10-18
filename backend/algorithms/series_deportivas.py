@@ -30,6 +30,4 @@ def series(juegos, probabilidad_casa, probabilidad_visita, formato):
             else:
                 matriz_respuesta[i][j]=round((1-probabilidad_visita)*matriz_respuesta[i][j-1]+ probabilidad_visita*matriz_respuesta[i-1][j],4)
 
-    return matriz_respuesta
-
-
+    return {"resultado": matriz_respuesta}
