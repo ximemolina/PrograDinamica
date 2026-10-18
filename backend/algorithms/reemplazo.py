@@ -70,9 +70,3 @@ def reemplazo(costo_inicial, plazo, vida_util, periodos):
     tabla = formatear_tabla(plazo, costo_min, mejores)
 
     return {"resultado": costo_min[0],"rutas": rutas(0, plazo, mejores),"tabla":tabla}
-
-print(reemplazo(500, 5, 3, [
-    {"reventa": 400, "mantenimiento": 30},
-    {"reventa": 300, "mantenimiento": 40},
-    {"reventa": 250, "mantenimiento": 60},
-]))
